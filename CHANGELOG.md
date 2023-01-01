@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * solved issue of example.
+
+## 0.0.4
+
+* edit a line in README.md
