@@ -8,6 +8,8 @@ extension Farsi on String {
 
   Duration timeToRead() => t.timeToRead(this);
 
+  String toFarsiString() => d.digitToFarsiString(digits: this);
+
   String toEnglishNumber() => d.digitToEnglish(this);
 
   String toFarsiNumber() => d.digitToFarsi(this);

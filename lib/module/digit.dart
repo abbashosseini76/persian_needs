@@ -26,6 +26,7 @@ String digitToEnglish(String text) {
 }
 
 String digitToFarsiString({required String digits}) {
+  digits = checkAndFormatDigits(digits);
   const int splitCount = 3;
   List<String> list = [];
   final lastIndex = digits.length;
@@ -35,6 +36,14 @@ String digitToFarsiString({required String digits}) {
     list.add(digits.substring(start, end));
   }
   return _mergeNameOfAllDigits(list);
+}
+
+String checkAndFormatDigits(String digits) {
+  digits = digitToEnglish(digits);
+  if (int.tryParse(digits) == null) {
+    throw Exception('input should only contain `int` value.');
+  }
+  return digits;
 }
 
 String _mergeNameOfAllDigits(List<String> list) {
