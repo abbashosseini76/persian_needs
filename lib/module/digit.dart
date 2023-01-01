@@ -25,7 +25,7 @@ String digitToEnglish(String text) {
   return result;
 }
 
-String digitToFarsiString({required String digits}) {
+String digitToFarsiString(String digits) {
   digits = checkAndFormatDigits(digits);
   const int splitCount = 3;
   List<String> list = [];
