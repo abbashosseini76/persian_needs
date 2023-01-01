@@ -8,9 +8,13 @@ enum Gender {
 }
 
 String randomPerson({Gender gender = Gender.random}) {
-  String name;
-  String family;
+  String name = randomName(gender: gender);
+  String family = families[Random().nextInt(families.length)]; 
+  return '$name $family';
+}
 
+String randomName({Gender gender = Gender.random}) {
+  String name;
   if (gender == Gender.random) {
     gender = Gender.values[(Random().nextInt(2) + 1)]; // 1 = male, 2 = femail
   }
@@ -19,17 +23,14 @@ String randomPerson({Gender gender = Gender.random}) {
   } else {
     name = randomFemaleName;
   }
-
-  family = families[Random().nextInt(families.length)];
-
-  return '$name $family';
+  return name;
 }
 
 String loremByWordCount({required int count}) {
   String result = '';
   final words = loremSentence.toString().split(' ');
   for (int i = 0; i < count; i++) {
-    result += '${words[i%words.length]} ';
+    result += '${words[i % words.length]} ';
   }
   return result;
 }
