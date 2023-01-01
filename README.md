@@ -10,7 +10,6 @@ Utilities for persian language developers. Contains useful extensions for String
 * convert numbers to persian text: 1,235,465 => یک میلیون و دویست و سی و پنج هزار و چهارصد و شصت و پنج
 * show the repetitions of words/chars in the text. 
 * finding the most/least repetition of words/chars in the text.
-* Finding the repetitions of  in the text.
 * convert persian numbers to english numbers and in reverse.
 * persian `Lorem Ipsum` facilities are built in.
 * possibility of making fake random person names (with gender option) => randomPerson() => عرفان طباطبائی
