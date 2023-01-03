@@ -1,3 +1,5 @@
+import 'package:persian_needs/module/digit.dart';
+
 enum Order {
   ascending,
   descending,
@@ -14,6 +16,26 @@ List<Map<String, int>> mostWords(String text) {
     }
   }
   return result;
+}
+
+String toRialString(String s, {bool fromToman = false}) {
+  s = digitToEnglish(s);
+  if (int.tryParse(s) == null || int.parse(s).isNegative) {
+    throw Exception('$s is invalid.');
+  }
+  if (fromToman) s = '${s}0';
+  s = digitToFarsiString(s);
+  return '$s ریال';
+}
+
+String toTomanString(String s, {bool fromRial = false}) {
+  s = digitToEnglish(s);
+  if (int.tryParse(s) == null || int.parse(s).isNegative) {
+    throw Exception('$s is invalid.');
+  }
+  if (fromRial) s = s.substring(0, s.length - 1);
+  s = digitToFarsiString(s);
+  return '$s تومان';
 }
 
 List<Map<String, int>> leastWords(String text) {

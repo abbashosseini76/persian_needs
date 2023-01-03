@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * edit a line in README.md
+
+## 0.1.1
+
+* add Toman/Rial support

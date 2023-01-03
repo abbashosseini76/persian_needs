@@ -6,6 +6,12 @@ import '../module/time.dart' as t;
 extension Farsi on String {
   int smsPageCount() => sms.smsPageCount(this);
 
+  String toRialString({fromToman = false}) =>
+      s.toRialString(this, fromToman: fromToman);
+
+  String toTomanString({fromRial = false}) =>
+      s.toTomanString(this, fromRial: fromRial);
+
   Duration timeToRead() => t.timeToRead(this);
 
   String toFarsiString() => d.digitToFarsiString(this);

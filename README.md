@@ -16,6 +16,8 @@ Utilities for persian language developers. Contains useful extensions for String
 * estimating the time interval till now with readable format: dateTime.tillNow() => چهل و شش دقیقه پیش
 * estimating the time to read from text.
 * calculating the number of pages in `SMS` from text.
+* Convert int value to Toman/Rial string. 25000.toTomanString(fromRial:  true) => دو هزار و پانصد تومان
+* convert Toman/Rial to Rial/Toman. 120.rial => 1200 / 120.toman => 12
 
 ## Issues and feature requests
 
@@ -56,6 +58,8 @@ void main() {
     ); // {ا: 96, ر: 49, ی: 47, و: 44, د: 34, ... } <!>because of persian words, output is reverse.
     text.wordsCount(); // 133
     text.words(); // [لورم, ایپسوم, متن, ساختگی, با, تولید, ...]
+    '25000'.toRialString(fromToman: true); // دویست و پنجاه هزار ریال
+    '25000'.toTomanString(fromRial:  true); // دو هزار و پانصد تومان
 }
 ```
 ## String methods
@@ -80,6 +84,8 @@ void main() {
     ); // {ا: 96, ر: 49, ی: 47, و: 44, د: 34, ... } <!>because of persian words, output is reverse.
     wordsCount(text); // 133
     words(text); // [لورم, ایپسوم, متن, ساختگی, با, تولید, ...]
+    toRialString('25000', fromToman: true); // دویست و پنجاه هزار ریال
+    toTomanString('25000', fromRial: true); // دو هزار و پانصد تومان
 }
 ```  
 ## Work with numbers
@@ -88,6 +94,8 @@ void main() {
   void main() {
       1234.farsi(); // ١۲۳۴
       1234.farsiString(); // یک هزار و دویست و سی و چهار
+      12500.rial(); // 125000
+      12500.toman(); // 1250
       '1235'.toFarsiNumber(); // ١۲۳۵
       '١۲۳۵'.toEnglishNumber(); //1235
       '122352'.toFarsiString(); //صد و بیست و دو هزار و سیصد و پنجاه و دو
